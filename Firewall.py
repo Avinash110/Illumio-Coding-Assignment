@@ -2,7 +2,7 @@ import csv
 class Firewall():
 	def __init__(self, filePath):
 		self.indexedMap = {}
-		self.ipadressMap = {}
+		self.ipaddressMap = {}
 		self.portRange = [1,65535]
 
 		self.initPorts()
@@ -22,12 +22,12 @@ class Firewall():
 						self.indexedMap[direction] = []
 					if protocol not in self.indexedMap:
 						self.indexedMap[protocol] = []
-					if ip not in self.ipadressMap:
-						self.ipadressMap[ip] = []
+					if ip not in self.ipaddressMap:
+						self.ipaddressMap[ip] = []
 
 					self.indexedMap[direction].append(i)
 					self.indexedMap[protocol].append(i)
-					self.ipadressMap[ip].append(i)
+					self.ipaddressMap[ip].append(i)
 					self.handlePort(port, i)
 
 	def handlePort(self, port, row):
@@ -58,15 +58,15 @@ class Firewall():
 
 	def getIPRows(self, ip):
 		ipRows = []
-		ipadresses = self.ipadressMap.keys()
+		ipadresses = self.ipaddressMap.keys()
 		for ipadress in ipadresses:
 			if "-" in ipadress:
 				if self.isIpInRange(ipadress, ip):
-					ipRows.extend(list(self.ipadressMap[ipadress]))
+					ipRows.extend(list(self.ipaddressMap[ipadress]))
 
 			else:
 				if(ipadress == ip):
-					ipRows.extend(list(self.ipadressMap[ipadress]))
+					ipRows.extend(list(self.ipaddressMap[ipadress]))
 
 		return ipRows
 
