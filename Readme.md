@@ -2,12 +2,12 @@ The Assignment is to build a firewall like setup which based on the rules accept
 
 To run the above code run the test.py file.
 
-The first approach that I thought of was building up a decision tree. Like if we are given the 2 rules
-1 - inbound,tcp,80,192.168.1.2
-2 - outbound,tcp,10000-20000,192.168.10.11
+The first approach that I thought of was building up a decision tree. Like if we are given the 2 rules:
+	1 - inbound,tcp,80,192.168.1.2
+	2 - outbound,tcp,10000-20000,192.168.10.11
 we can build something like
 	
-					direction
+                    direction
 					/        \ 
 			inbound/	      \outbound
 				  /	           \
@@ -37,6 +37,6 @@ I have tested both inclusive and exclusive and the test cases are available in t
 
 Regarding the team preference:
 	
-	1 - Data Team: Data team because I have 2 years experience in the capacity of Data Engineer, I have worked on entire data pipeline from collecting data to data visualization. More of the details can be found on my resume or you could also check my LinkedIn profile: [Avinash Bhojwani](https://linkedin.com/in/avinashbhojwani11)
+	1 - Data Team: Data team because I have 2 years experience in the capacity of Data Engineer, I have worked on entire data pipeline from collecting data to data visualization. More of the details can be found on my resume or you could also check my LinkedIn profile: https://linkedin.com/in/avinashbhojwani11
 
 	2 - Platform Team: I have experience in building framework in NodeJS on top of Express framework which handled routing of requests, request authorization, oauth authentication, caching module. I have also worked building API's in NodeJS which executed queries on database and returned the data to client for rendering data visualization components.
